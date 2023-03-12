@@ -1,93 +1,72 @@
-from random import randint
+import random
 
-scores = {"computer": 0, "player": 0}
-
-
-class Board:
-    """
-    Class representing the game board.
-    """
-    def __init__(self, size, num_ships, name, type):
-        self.size = size
-        self.board = ["." for x in range(size) for y in range(size)]
-        self.num_ships = num_ships
-        self.name = name
-        self.type = type
-        self.guesses =[]
-        self.ship =[]
-
-    def print(self):
-        for row in self.board:
-            print("".join(row))
-
-    def guess(self, x, y):  # Add the guess to the list of guesses
-        self.guesses.append(x, y)
-        self.board[x][y] = "x"
-    if (x, y) in self.ships:
-        self.board[x][y] = "*"  # Mark the board with a hit
-        print(f"{self.name} hit a ship!")
-        return "Hitt"
-    else
-
-     self.board[x][y] = "x"  # Mark the board with a miss
-    print(f"{self.name} missed.")
-    return "Miss"
- def play_game():
-     
-    """
-    Function to play a single game of Battleship.
-    
-    """
-    # Create the player and computer boards
-    player_board = Board(5, 2, "Player", "human")
-    computer_board = Board(5, 2, "Computer", "computer")
-
-    # Loop through the game until all ships are sunk
-    while True:
-        # Print the game boards
-        print("Player Board:")
-        player_board.print()
-        print("Computer Board:")
-        computer_board.print()
-        
-        # Player's turn
-        print("Player's turn:")
-        while True:
-            try:
-                x = int(input("Enter a row number: "))
-                y = int(input("Enter a column number: "))
-                break
-            except ValueError:
-                print("Invalid input. Please enter integers for row and column numbers.")
-        result = computer_board.guess(x, y)
-        if result == "Hit":
-            print("Player hit a ship!")
-        if computer_board.num_ships == sum(row.count("*") for row in computer_board.board):
-            print("Player wins!")
-            return "player"
-        
-        # Computer's turn
-        print("Computer's turn:")
-        x = randint(0, 4)
-        y = randint(0, 4)
-        result = player_board.guess(x, y)
-        if result == "Hit":
-            print("Computer hit a ship!")
-        if player_board.num_ships == sum(row.count("*") for row in player_board.board):
-            print("Computer wins!")
-            return "computer"
-
-def main():
-    """
-    Function to play multiple games of Battleship and keep track of the overall score.
-    """
-    scores = {"player": 0, "computer": 0}
-    num_games = int(input("How many games do you want to play? "))
-    for i in range(num_games):
-        print(f"Starting game {i+1}...")
-        winner = play_game()
-        scores[winner] += 1
-        print(f"Current score: Player - {scores)   
+# Set up game parameters
+board_size = 5
+num_ships = 4
+ship_size = 3
 
 
-    
+# Define helper functions
+def print_board(board):
+    for row in board:
+        print(" ".join(row))
+
+
+def get_random_row_col(board_size):
+    row = random.randint(0, board_size - 1)
+    col = random.randint(0, board_size - 1)
+    return row, col
+
+
+# Set up game board
+board = []
+for i in range(board_size):
+    board.append(["O"] * board_size)
+
+# Place ships on board
+ships = []
+for i in range(num_ships):
+    ship = []
+    row, col = get_random_row_col(board_size)
+    for j in range(ship_size):
+        if random.randint(0, 1) == 0:
+            ship.append([row, col + j])
+        else:
+            ship.append([row + j, col])
+    ships.append(ship)
+
+# Start game loop
+print("Welcome to ULTIMATE BATTLESHIPS!!")
+print(f"Board Size: {board_size}. Number of ships: {num_ships}")
+print("Top left corner is row: 0, col: 0")
+print()
+player_name = input("Please enter your name: ")
+print()
+
+num_turns = 0
+while True:
+    # Print board and ask for user input
+    print_board(board)
+    print(f"{player_name}, it's your turn!")
+    guess_row = int(input("Guess row (0-4): "))
+    guess_col = int(input("Guess col (0-4): "))
+    print()
+
+    # Check if guess is a hit or a miss
+    if [guess_row, guess_col] in ships:
+        print("HIT!")
+        ships.remove([guess_row, guess_col])
+        board[guess_row][guess_col] = "X"
+    else:
+        print("MISS!")
+        board[guess_row][guess_col] = "M"
+
+    # Check if game is over
+    if not ships:
+        print_board(board)
+        print(f"Congratulations {player_name}, you sank all the ships!")
+        print(f"You took {num_turns} turns.")
+        break
+
+    # Increment turn counter
+    num_turns += 1
