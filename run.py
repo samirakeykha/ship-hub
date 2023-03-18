@@ -55,8 +55,8 @@ while True:
                 "You must enter your response in integer format"
             )
     except TypeError as d:
-        print(f"Invalid response: {d}")
-         
+        print(f"Invalid response: {d}") 
+                      
     guess_col = int(input("Guess col (0-4): "))
     print()
 
