@@ -49,14 +49,11 @@ while True:
     print_board(board)
     print(f"{player_name}, it's your turn!")
     try:
-        guess_row = input("Guess row (0-4): ")
-        if not isinstance(guess_row, int):
-            raise TypeError(
-                "You must enter your response in integer format"
-            )
-    except TypeError as d:
-        print(f"Invalid response: {d}") 
-                      
+        guess_row = int(input("Guess row (0-4): "))
+    except ValueError:
+        print("Invalid response: You must enter your response iinteger format")
+
+        continue
     guess_col = int(input("Guess col (0-4): "))
     print()
 
