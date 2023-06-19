@@ -37,25 +37,17 @@ Happy coding!
 
 ## To play the game using the provided code, follow these steps: ##
 
-Run the code in a Python environment or IDE.
+1. Run the code in a Python environment or IDE.
+2. The game will start by displaying the welcome message, board size, number of ships, and information about the coordinate system.
+3. You will be prompted to enter your name. Type your name and press Enter.
+4. The game board will be displayed, showing the initial state of the board with all cells marked as "O" (representing the ocean).
+5. It will be your turn. You will be asked to guess the row and column where you think a ship is located. Enter the row number (between 0 and 4) and press Enter. Then enter the column number (also between 0 and 4) and press Enter.
+6. The program will check if your guess is a hit or a miss. If you hit a ship, it will display "HIT!" and mark the corresponding cell on the board with an "X". If you miss, it will display "MISS!" and mark the corresponding cell with an "M".
+7. The game will continue with the next turn. Repeat steps 5 and 6 to continue guessing the ship's locations.
+8. The game will end when you successfully sink all the ships. It will display the final state of the board, congratulate you, and show the number of turns it took to win.
+9. You can run the code again to play another round.
 
-The game will start by displaying the welcome message, board size, number of ships, and information about the coordinate system.
-
-You will be prompted to enter your name. Type your name and press Enter.
-
-The game board will be displayed, showing the initial state of the board with all cells marked as "O" (representing the ocean).
-
-It will be your turn. You will be asked to guess the row and column where you think a ship is located. Enter the row number (between 0 and 4) and press Enter. Then enter the column number (also between 0 and 4) and press Enter.
-
-The program will check if your guess is a hit or a miss. If you hit a ship, it will display "HIT!" and mark the corresponding cell on the board with an "X". If you miss, it will display "MISS!" and mark the corresponding cell with an "M".
-
-The game will continue with the next turn. Repeat steps 5 and 6 to continue guessing the ship's locations.
-
-The game will end when you successfully sink all the ships. It will display the final state of the board, congratulate you, and show the number of turns it took to win.
-
-You can run the code again to play another round.
-
-Note: The game uses a coordinate system where the top left corner is considered row 0, column 0, and the bottom right corner is row 4, column 4. Make sure to enter the row and column numbers accordingly.
+## Note:## The game uses a coordinate system where the top left corner is considered row 0, column 0, and the bottom right corner is row 4, column 4. Make sure to enter the row and column numbers accordingly.
 
 
 1. This line imports thry Python ´random´ module, which is used to generate random numbers and make random 
