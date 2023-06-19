@@ -47,7 +47,8 @@ Happy coding!
 8. The game will end when you successfully sink all the ships. It will display the final state of the board, congratulate you, and show the number of turns it took to win.
 9. You can run the code again to play another round.
 
-## Note:## The game uses a coordinate system where the top left corner is considered row 0, column 0, and the bottom right corner is row 4, column 4. Make sure to enter the row and column numbers accordingly.
+## Note: ## 
+The game uses a coordinate system where the top left corner is considered row 0, column 0, and the bottom right corner is row 4, column 4. Make sure to enter the row and column numbers accordingly.
 
 
 1. This line imports thry Python ´random´ module, which is used to generate random numbers and make random 
