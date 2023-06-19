@@ -49,7 +49,7 @@ Happy coding!
 
 ## Note: ## 
 The game uses a coordinate system where the top left corner is considered row 0, column 0, and the bottom right corner is row 4, column 4. Make sure to enter the row and column numbers accordingly.
-
+![Alt Text](11.png)
 
 1. This line imports thry Python ´random´ module, which is used to generate random numbers and make random 
 selections from sequences.
