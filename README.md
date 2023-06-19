@@ -30,6 +30,9 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 -----
 Happy coding!
 
+
+[visit](https://ship-hub.herokuapp.com/)
+
 1. This line imports thry Python ´random´ module, which is used to generate random numbers and make random 
 selections from sequences.
 
@@ -81,3 +84,6 @@ The 'for' loop runs 'boarde_size' times and adds a new row to the board, which i
 
 
 
+
+
+[def]: https://ship-hub.herokuapp.com/
