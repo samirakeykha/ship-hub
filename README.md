@@ -61,6 +61,7 @@ selections from sequences.
 bord_size = 5  
 num_ships = 4  
 ship_size = 3  
+![Alt Text](11.png)
 
 3. This function takes a game board as input and prints it to the console, row by row. Each row is joined into a single
 string with spaces between the characters, so that the output looks like a grid.
@@ -85,7 +86,6 @@ The 'for' loop runs 'boarde_size' times and adds a new row to the board, which i
 
 
 6. This code initializes  the ship on the game boarde. The for loop runs 'num_ship' times and adds a new ship to 'ship' list.
-
     Each ship is represented as a list of coordinates (row, column) om the game board. The 'get_random_row_col()' function is used to generate a andom starting pointfot the ship. Then, a 'for' loop runt 'shio_size'times and adds the coordinates of the ship's cellsto the 'ship' list.  The 'if' statement inside the loop randomly chooses whether to add cells horizontally or vertically to the ship.
    ships = []
    for i in range(num_ships):     
@@ -98,7 +98,53 @@ The 'for' loop runs 'boarde_size' times and adds a new row to the board, which i
    ship.append([row + j, col])
    ships.append(ship)
 
-   7. These lines introduce the game and ask the player for their name.
+ 
+7. This code initializes the ships on the game board. The for loop runs num_ships times and adds a new ship to the ships       
+  list.     
+  Each ship is represented as a list of coordinates (row, column) on the game board. The get_random_row_col() function is used to 
+  generate a random starting point for the ship. Then, a for loop runs ship_size times and adds the coordinates of the ship's cells 
+  to the ship list. The if statement inside the loop randomly chooses whether to add cells horizontally or vertically to the ship.
+   print("Welcome to ULTIMATE BATTLESHIPS!!")
+   print(f"Board Size: {board_size}. Number of ships: {num_ships}")
+   print("Top left corner is row: 0, col: 0")
+   print()
+   player_name = input("Please enter your name: ")
+   print()
+
+8. These lines introduce the game and ask the player for their name.
+     num_turns = 0
+    while True:
+    # Print board and ask for user input
+    print_board(board)
+    print(f"{player_name}, it's your turn!")
+    try:
+        guess_row = int(input("Guess row (0-4): "))
+    except ValueError:
+        print("Invalid response: You must enter your response iinteger format")
+
+        continue
+    guess_col = int(input("Guess col (0-4): "))
+    print()
+
+    # Check if guess is a hit or a miss
+    if [guess_row, guess_col] in ships:
+        print("HIT!")
+        ships.remove([guess_row, guess_col])
+        board[guess_row][guess_col] = "X"
+    else:
+        print("MISS!")
+        board[guess_row][guess_col] = "M"
+
+    # Check if game is over
+    if not ships:
+        print_board(board)
+        print(f"Congratulations {player_name}, you sank all the ships!")
+        print(f"You took {num_turns} turns.")
+        break
+
+    # Increment turn counter
+    num_turns += 1
+
 
 
 
