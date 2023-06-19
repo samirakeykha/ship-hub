@@ -33,8 +33,8 @@ Happy coding!
 **Developer**
 
 [Visit](https://ship-hub.herokuapp.com/)
-![Alt Text](12.png) (style="width: 40px;height:40px;")
-### HOW TO PLAYE ###
+![Alt Text](12.png)
+# HOW TO PLAYE #
 ## To play the game using the provided code, follow these steps: ##
 
 1. Run the code in a Python environment or IDE.
@@ -49,8 +49,9 @@ Happy coding!
 
 ## Note: ## 
 The game uses a coordinate system where the top left corner is considered row 0, column 0, and the bottom right corner is row 4, column 4. Make sure to enter the row and column numbers accordingly.
+![Alt Text](12.png)
 
-
+ # Programming #
 1. This line imports thry Python ´random´ module, which is used to generate random numbers and make random 
 selections from sequences.
 # Random
@@ -65,7 +66,6 @@ board_size = 5
 num_ships = 4
 ship_size = 3
 
-![Alt Text](11.png)
 
 3. This function takes a game board as input and prints it to the console, row by row. Each row is joined into a single
 string with spaces between the characters, so that the output looks like a grid.
@@ -84,7 +84,7 @@ Function is used to generate random integers between 0 and ´board_size - 1´ ,W
 
 5. This code initializes the game boarde to a list of lists, with each inner list representing a row on the board.
 The 'for' loop runs 'boarde_size' times and adds a new row to the board, which is filled with the sting "0" (representing "ocean") using the ´*´ operator.
-# Set up game board
+  # Set up game board
     board = []
     for i in range(board_size):  
     board.append(["O"] * board_size) 
@@ -92,7 +92,7 @@ The 'for' loop runs 'boarde_size' times and adds a new row to the board, which i
 
 6. This code initializes  the ship on the game boarde. The for loop runs 'num_ship' times and adds a new ship to 'ship' list.
     Each ship is represented as a list of coordinates (row, column) om the game board. The 'get_random_row_col()' function is used to generate a andom starting pointfot the ship. Then, a 'for' loop runt 'shio_size'times and adds the coordinates of the ship's cellsto the 'ship' list.  The 'if' statement inside the loop randomly chooses whether to add cells horizontally or vertically to the ship.
-# Place ships on board
+   # Place ships on board
    ships = []
    for i in range(num_ships):     
    ship = []                      
@@ -110,7 +110,7 @@ The 'for' loop runs 'boarde_size' times and adds a new row to the board, which i
   Each ship is represented as a list of coordinates (row, column) on the game board. The get_random_row_col() function is used to 
   generate a random starting point for the ship. Then, a for loop runs ship_size times and adds the coordinates of the ship's cells 
   to the ship list. The if statement inside the loop randomly chooses whether to add cells horizontally or vertically to the ship.
-  # Start game loop
+   # Start game loop
    print("Welcome to ULTIMATE BATTLESHIPS!!")
    print(f"Board Size: {board_size}. Number of ships: {num_ships}")
    print("Top left corner is row: 0, col: 0")
@@ -151,6 +151,20 @@ The 'for' loop runs 'boarde_size' times and adds a new row to the board, which i
 
     # Increment turn counter
     num_turns += 1
+
+# VALIDATOR TESTING #
+ [CI Python Linter](https://pep8ci.herokuapp.com/)
+![Alt Text](12.png)
+*Terminals*
+![Alt Text](15.png)
+
+# Requirements #
+![Alt Text](16.png)
+
+# Deployment #
+![Alt Text](17.png)
+
+
 
 
 
